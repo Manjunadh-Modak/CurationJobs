@@ -10,7 +10,7 @@ val loginData = """{ "username": "YSU0000", "password": "YSU0000", "timeout": "4
 val lookupUrl = s"http://172.30.3.196:8080/api/v1/$lookupValue"
 
 val df = almaren.builder
-  .sql(s"""SELECT uuid() as requestId, '$loginUrl' as url, '$loginData' as data""")
+  .sql(s"""SELECT uuid() as requestId, '$loginUrl' as __URL__, '$loginData' as __DATA__""")
   .http(
     method = "POST",
     headers = Map("Content-Type" -> "application/json"),
