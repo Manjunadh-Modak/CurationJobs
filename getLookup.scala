@@ -31,3 +31,5 @@ val df1 = almaren.builder
     batchSize = 10000
   )
   .batch
+
+df1.write.format("parquet").mode("overwrite").option("path", "s3a://cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/cdp_meta_db_test").saveAsTable("nabu_test.cdp_meta_db_test")
