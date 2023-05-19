@@ -17,7 +17,6 @@ val df = almaren.builder
     .http(method = "POST", headers = Map("Content-Type" -> "application/json"),threadPoolSize = 10, batchSize = 10000).deserializer("JSON","__BODY__",None).batch
 
 val token = df.select("token").as[String].first
-
 val tokenNew=s"Bearer $token"
 
 val df1 = almaren.builder
@@ -27,4 +26,3 @@ val df1 = almaren.builder
     .http(method = "GET", headers = Map("Content-Type" -> "application/json","Authorization"-> tokenNew),threadPoolSize = 10, batchSize = 10000).batch
 
 df1.write.mode("overwrite").parquet("s3a://cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/lookup_cloud_provider.parquet")
-
