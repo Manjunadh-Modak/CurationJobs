@@ -1,8 +1,7 @@
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.config("spark.jars", "/home/ma0804/Downloads/postgresql-42.4.2.jar") \
-    .master("local").appName("Pyspark").getOrCreate()
+spark = SparkSession.builder.master("local").appName("Pyspark").getOrCreate()
 
 df = spark.read.format("jdbc").option("url", "jdbc:postgresql://172.30.3.196:5432/yeedu") \
     .option("driver", "org.postgresql.Driver").option("dbtable", "yeedu.lookup_cloud_providers") \
