@@ -10,4 +10,4 @@ df = spark.read.format("jdbc").option("url", "jdbc:postgresql://172.30.3.196:543
 df.printSchema()
 df.select("id","name","description").show()
 
-df.write.mode("Overwrite").option("path", "/cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/lookup_cloud_provider.parquet")
+df.write.mode("Overwrite").option("path", "/cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/pysaprk_lookup_cloud_provider.parquet")
