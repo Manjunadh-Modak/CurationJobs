@@ -25,4 +25,4 @@ val df1 = almaren.builder
                 '$lookupUrl' as __URL__""")
     .http(method = "GET", headers = Map("Content-Type" -> "application/json","Authorization"-> tokenNew),threadPoolSize = 10, batchSize = 10000).batch
 
-df1.write.mode("overwrite").parquet("s3a://cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/lookup_cloud_provider.parquet")
+df1.write.mode("overwrite").parquet(s"s3a://cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/$lookupValue.parquet")
