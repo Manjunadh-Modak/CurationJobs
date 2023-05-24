@@ -1,7 +1,7 @@
 import pyspark
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.config("spark.jars", "/home/ma0804/Downloads/postgresql-42.4.2.jar").master("local").appName("Pyspark").getOrCreate()
+spark = SparkSession.builder.master("local").appName("Pyspark").getOrCreate()
 
 table_name=spark.sparkContext.getConf().get("spark.driver.lookup_value")
 
