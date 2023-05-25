@@ -11,4 +11,4 @@ df = spark.read.format("jdbc").option("url", "jdbc:postgresql://172.30.3.196:543
 
 df.show(truncate=False)
 
-df.write.mode("overwrite").parquet("path", f"s3a://cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/{table_name}.parquet")
+df.write.mode("Overwrite").option("path",f"s3a://cdpmodakbucket/cdpdevenv/data/warehouse/tablespace/external/hive/yeedu/{table_name}.parquet")
