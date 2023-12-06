@@ -11,11 +11,10 @@ val someDF = Seq(
 someDF.show(false)
 var a = 1000000
  
-while (a > 0) 
+while (true) 
         {
             println("a is : " + a)
             a = a - 1;
-            Thread.sleep(1000*60*60)
             val df = almaren.builder.sourceDataFrame(someDF).batch
             df.show(false)
             println(df.count)
