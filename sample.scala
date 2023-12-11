@@ -9,13 +9,13 @@ val someDF = Seq(
   (-27, 27)
 ).toDF("datastore_id", "table_id")
 someDF.show(false)
-var a = 100
+var a = 700
  
 while (a > 0) 
         {
             println("a is : " + a)
             a = a - 1;
-            Thread.sleep(100)
+            Thread.sleep(1000)
             val df = almaren.builder.sourceDataFrame(someDF).batch
             df.show(false)
         }
