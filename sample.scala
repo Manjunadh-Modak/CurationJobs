@@ -15,7 +15,7 @@ while (a > 0)
         {
             println("a is : " + a)
             a = a - 1;
-            Thread.sleep(15000)
+            Thread.sleep(3000)
             val df = almaren.builder.sourceDataFrame(someDF).batch
             df.show(false)
         }
